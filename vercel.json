@@ -1,0 +1,31 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "env": {
+    "POSTGRES_URL": "@postgres-url",
+    "POSTGRES_PRISMA_URL": "@postgres-prisma-url",
+    "POSTGRES_URL_NON_POOLING": "@postgres-url-non-pooling",
+    "KV_URL": "@kv-url",
+    "KV_REST_API_URL": "@kv-rest-api-url",
+    "KV_REST_API_TOKEN": "@kv-rest-api-token",
+    "BLOB_READ_WRITE_TOKEN": "@blob-read-write-token",
+    "NEXTAUTH_URL": "@nextauth-url",
+    "NEXTAUTH_SECRET": "@nextauth-secret",
+    "OPENAI_API_KEY": "@openai-api-key",
+    "ANTHROPIC_API_KEY": "@anthropic-api-key",
+    "PUSHER_APP_ID": "@pusher-app-id",
+    "NEXT_PUBLIC_PUSHER_APP_KEY": "@pusher-app-key",
+    "PUSHER_SECRET": "@pusher-secret",
+    "PUSHER_CLUSTER": "us2",
+    "DEVICE_BACKEND_URL": "@device-backend-url",
+    "DEVICE_BACKEND_API_KEY": "@device-backend-api-key"
+  },
+  "functions": {
+    "app/api/**/*.ts": {
+      "maxDuration": 30
+    }
+  }
+}
