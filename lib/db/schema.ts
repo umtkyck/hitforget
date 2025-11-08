@@ -222,6 +222,117 @@ export const providerEarnings = pgTable('provider_earnings', {
   createdAt: timestamp('created_at').defaultNow(),
 });
 
+// ============================================================
+// VIRTUAL PROCESSOR SIMULATION SYSTEM
+// ============================================================
+
+// Virtual Processor Types (Catalog of available virtual processors)
+export const virtualProcessorTypes = pgTable('virtual_processor_types', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  name: varchar('name', { length: 255 }).notNull(), // 'Arduino Uno', 'STM32F401', 'Raspberry Pi 4'
+  category: varchar('category', { length: 100 }).notNull(), // 'arduino', 'stm32', 'raspberry_pi', 'fpga'
+  architecture: varchar('architecture', { length: 100 }).notNull(), // 'AVR', 'ARM Cortex-M4', 'ARM Cortex-A72'
+  description: text('description'),
+  imageUrl: text('image_url'),
+  specifications: jsonb('specifications'), // {cpu: '16MHz', ram: '2KB', flash: '32KB', pins: 14}
+  simulatorEngine: varchar('simulator_engine', { length: 100 }), // 'simavr', 'qemu', 'renode'
+  isActive: boolean('is_active').default(true),
+  monthlyPrice: decimal('monthly_price', { precision: 10, scale: 2 }).default('9.99'),
+  yearlyPrice: decimal('yearly_price', { precision: 10, scale: 2 }).default('99.99'),
+  features: jsonb('features'), // ['pin_assignment', 'uart', 'i2c', 'spi', 'pwm']
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+});
+
+// Subscription Plans
+export const subscriptionPlans = pgTable('subscription_plans', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  name: varchar('name', { length: 255 }).notNull(), // 'Basic Virtual', 'Pro Virtual', 'Enterprise'
+  description: text('description'),
+  priceUsd: decimal('price_usd', { precision: 10, scale: 2 }).notNull(),
+  billingInterval: varchar('billing_interval', { length: 50 }).notNull(), // 'monthly', 'yearly'
+  maxVirtualInstances: integer('max_virtual_instances').default(1),
+  maxSimulationHours: integer('max_simulation_hours').default(100), // Hours per month
+  maxStorageGB: integer('max_storage_gb').default(5),
+  features: jsonb('features'), // ['unlimited_builds', 'priority_support', 'custom_pins']
+  isActive: boolean('is_active').default(true),
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+});
+
+// User Subscriptions
+export const userSubscriptions = pgTable('user_subscriptions', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  userId: uuid('user_id').references(() => users.id, { onDelete: 'cascade' }).notNull(),
+  planId: uuid('plan_id').references(() => subscriptionPlans.id, { onDelete: 'set null' }),
+  processorTypeId: uuid('processor_type_id').references(() => virtualProcessorTypes.id, { onDelete: 'set null' }),
+  status: varchar('status', { length: 50 }).default('active'), // 'active', 'cancelled', 'expired', 'paused'
+  billingInterval: varchar('billing_interval', { length: 50 }).notNull(), // 'monthly', 'yearly'
+  currentPeriodStart: timestamp('current_period_start').notNull(),
+  currentPeriodEnd: timestamp('current_period_end').notNull(),
+  cancelAt: timestamp('cancel_at'),
+  canceledAt: timestamp('canceled_at'),
+  stripeSubscriptionId: varchar('stripe_subscription_id', { length: 255 }),
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+});
+
+// Virtual Instances (User's virtual processor instances)
+export const virtualInstances = pgTable('virtual_instances', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  userId: uuid('user_id').references(() => users.id, { onDelete: 'cascade' }).notNull(),
+  subscriptionId: uuid('subscription_id').references(() => userSubscriptions.id, { onDelete: 'cascade' }).notNull(),
+  processorTypeId: uuid('processor_type_id').references(() => virtualProcessorTypes.id, { onDelete: 'cascade' }).notNull(),
+  name: varchar('name', { length: 255 }).notNull(), // User-defined name
+  description: text('description'),
+  status: varchar('status', { length: 50 }).default('stopped'), // 'running', 'stopped', 'error'
+  configuration: jsonb('configuration'), // Custom settings, peripherals enabled, clock speed
+  pinAssignments: jsonb('pin_assignments'), // {D2: 'LED', D3: 'Button', A0: 'Sensor'}
+  firmwareUrl: text('firmware_url'), // Last uploaded firmware
+  snapshotUrl: text('snapshot_url'), // VM snapshot for faster boot
+  ipAddress: varchar('ip_address', { length: 50 }), // For network-enabled simulations
+  vnc_port: integer('vnc_port'), // For GUI simulations (Raspberry Pi)
+  lastStartedAt: timestamp('last_started_at'),
+  lastStoppedAt: timestamp('last_stopped_at'),
+  totalRuntimeHours: decimal('total_runtime_hours', { precision: 10, scale: 2 }).default('0'),
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+});
+
+// Simulations (Simulation sessions)
+export const simulations = pgTable('simulations', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  userId: uuid('user_id').references(() => users.id, { onDelete: 'cascade' }).notNull(),
+  instanceId: uuid('instance_id').references(() => virtualInstances.id, { onDelete: 'cascade' }).notNull(),
+  projectId: uuid('project_id').references(() => projects.id, { onDelete: 'set null' }),
+  buildId: uuid('build_id').references(() => builds.id, { onDelete: 'set null' }),
+  status: varchar('status', { length: 50 }).default('running'), // 'running', 'paused', 'stopped', 'completed', 'failed'
+  firmwarePath: text('firmware_path'), // Path to HEX/BIN/ELF file
+  startedAt: timestamp('started_at').defaultNow(),
+  stoppedAt: timestamp('stopped_at'),
+  durationSeconds: integer('duration_seconds'),
+  serialOutput: text('serial_output'), // Captured serial output
+  logUrl: text('log_url'),
+  resultsUrl: text('results_url'), // Generated artifacts (screenshots, videos, data)
+  testResults: jsonb('test_results'), // Automated test results
+  errorMessage: text('error_message'),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
+// Pin Assignments (Virtual hardware pin configurations)
+export const pinAssignments = pgTable('pin_assignments', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  instanceId: uuid('instance_id').references(() => virtualInstances.id, { onDelete: 'cascade' }).notNull(),
+  pinNumber: varchar('pin_number', { length: 50 }).notNull(), // 'D2', 'A0', 'GPIO17'
+  pinMode: varchar('pin_mode', { length: 50 }).notNull(), // 'INPUT', 'OUTPUT', 'INPUT_PULLUP', 'PWM', 'ANALOG'
+  connectedComponent: varchar('connected_component', { length: 255 }), // 'LED', 'Button', 'Temp Sensor', 'Motor'
+  componentConfig: jsonb('component_config'), // {color: 'red', resistance: '220ohm'}
+  initialValue: integer('initial_value'), // Initial state (HIGH/LOW or analog value)
+  description: text('description'),
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+});
+
 // Relations
 export const usersRelations = relations(users, ({ one, many }) => ({
   projects: many(projects),
@@ -236,6 +347,9 @@ export const usersRelations = relations(users, ({ one, many }) => ({
   favorites: many(favorites),
   ratings: many(ratings),
   bookings: many(bookings),
+  subscriptions: many(userSubscriptions),
+  virtualInstances: many(virtualInstances),
+  simulations: many(simulations),
 }));
 
 export const hardwareProvidersRelations = relations(hardwareProviders, ({ one, many }) => ({
@@ -286,5 +400,74 @@ export const testRunsRelations = relations(testRuns, ({ one }) => ({
   deviceSession: one(deviceSessions, {
     fields: [testRuns.deviceSessionId],
     references: [deviceSessions.id],
+  }),
+}));
+
+// Virtual Processor Relations
+export const virtualProcessorTypesRelations = relations(virtualProcessorTypes, ({ many }) => ({
+  subscriptions: many(userSubscriptions),
+  instances: many(virtualInstances),
+}));
+
+export const subscriptionPlansRelations = relations(subscriptionPlans, ({ many }) => ({
+  subscriptions: many(userSubscriptions),
+}));
+
+export const userSubscriptionsRelations = relations(userSubscriptions, ({ one, many }) => ({
+  user: one(users, {
+    fields: [userSubscriptions.userId],
+    references: [users.id],
+  }),
+  plan: one(subscriptionPlans, {
+    fields: [userSubscriptions.planId],
+    references: [subscriptionPlans.id],
+  }),
+  processorType: one(virtualProcessorTypes, {
+    fields: [userSubscriptions.processorTypeId],
+    references: [virtualProcessorTypes.id],
+  }),
+  instances: many(virtualInstances),
+}));
+
+export const virtualInstancesRelations = relations(virtualInstances, ({ one, many }) => ({
+  user: one(users, {
+    fields: [virtualInstances.userId],
+    references: [users.id],
+  }),
+  subscription: one(userSubscriptions, {
+    fields: [virtualInstances.subscriptionId],
+    references: [userSubscriptions.id],
+  }),
+  processorType: one(virtualProcessorTypes, {
+    fields: [virtualInstances.processorTypeId],
+    references: [virtualProcessorTypes.id],
+  }),
+  simulations: many(simulations),
+  pinAssignments: many(pinAssignments),
+}));
+
+export const simulationsRelations = relations(simulations, ({ one }) => ({
+  user: one(users, {
+    fields: [simulations.userId],
+    references: [users.id],
+  }),
+  instance: one(virtualInstances, {
+    fields: [simulations.instanceId],
+    references: [virtualInstances.id],
+  }),
+  project: one(projects, {
+    fields: [simulations.projectId],
+    references: [projects.id],
+  }),
+  build: one(builds, {
+    fields: [simulations.buildId],
+    references: [builds.id],
+  }),
+}));
+
+export const pinAssignmentsRelations = relations(pinAssignments, ({ one }) => ({
+  instance: one(virtualInstances, {
+    fields: [pinAssignments.instanceId],
+    references: [virtualInstances.id],
   }),
 }));
