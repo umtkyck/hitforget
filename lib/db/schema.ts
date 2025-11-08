@@ -41,15 +41,41 @@ export const projects = pgTable('projects', {
   updatedAt: timestamp('updated_at').defaultNow(),
 });
 
+// Hardware Providers (Users who share their devices)
+export const hardwareProviders = pgTable('hardware_providers', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  userId: uuid('user_id').references(() => users.id, { onDelete: 'cascade' }).notNull().unique(),
+  businessName: varchar('business_name', { length: 255 }),
+  description: text('description'),
+  website: text('website'),
+  location: varchar('location', { length: 255 }),
+  isVerified: boolean('is_verified').default(false),
+  rating: decimal('rating', { precision: 3, scale: 2 }).default('0'), // 0.00 - 5.00
+  totalReviews: integer('total_reviews').default(0),
+  totalDevices: integer('total_devices').default(0),
+  totalBookings: integer('total_bookings').default(0),
+  revenueSharePercentage: integer('revenue_share_percentage').default(70), // Provider gets 70%, platform gets 30%
+  status: varchar('status', { length: 50 }).default('pending'), // 'pending', 'active', 'suspended'
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+});
+
 // Devices (Hardware Inventory)
 export const devices = pgTable('devices', {
   id: uuid('id').primaryKey().defaultRandom(),
+  providerId: uuid('provider_id').references(() => hardwareProviders.id, { onDelete: 'cascade' }), // null = platform owned
   deviceType: varchar('device_type', { length: 100 }).notNull(), // 'raspberry_pi_4', 'arduino_uno', etc.
+  deviceName: varchar('device_name', { length: 255 }).notNull(), // Custom name by provider
+  description: text('description'),
+  imageUrl: text('image_url'),
   slotNumber: integer('slot_number').notNull(),
   rackId: varchar('rack_id', { length: 50 }).notNull(),
   status: varchar('status', { length: 50 }).default('available'), // 'available', 'in_use', 'maintenance', 'failed'
+  isPublic: boolean('is_public').default(true), // Public in marketplace
+  hourlyRateUsd: decimal('hourly_rate_usd', { precision: 10, scale: 2 }).default('1.00'),
   currentSessionId: uuid('current_session_id'),
   healthStatus: jsonb('health_status'), // {temperature, voltage, last_check}
+  specifications: jsonb('specifications'), // {cpu, ram, storage, etc.}
   createdAt: timestamp('created_at').defaultNow(),
   updatedAt: timestamp('updated_at').defaultNow(),
 });
@@ -139,8 +165,65 @@ export const invoices = pgTable('invoices', {
   createdAt: timestamp('created_at').defaultNow(),
 });
 
+// Favorites (Users can favorite providers or other users)
+export const favorites = pgTable('favorites', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  userId: uuid('user_id').references(() => users.id, { onDelete: 'cascade' }).notNull(),
+  favoriteType: varchar('favorite_type', { length: 50 }).notNull(), // 'provider', 'user'
+  favoriteProviderId: uuid('favorite_provider_id').references(() => hardwareProviders.id, { onDelete: 'cascade' }),
+  favoriteUserId: uuid('favorite_user_id').references(() => users.id, { onDelete: 'cascade' }),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
+// Ratings & Reviews
+export const ratings = pgTable('ratings', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  userId: uuid('user_id').references(() => users.id, { onDelete: 'cascade' }).notNull(),
+  providerId: uuid('provider_id').references(() => hardwareProviders.id, { onDelete: 'cascade' }).notNull(),
+  deviceId: uuid('device_id').references(() => devices.id, { onDelete: 'set null' }),
+  sessionId: uuid('session_id').references(() => deviceSessions.id, { onDelete: 'set null' }),
+  rating: integer('rating').notNull(), // 1-5 stars
+  review: text('review'),
+  response: text('response'), // Provider's response
+  isVerified: boolean('is_verified').default(false), // Verified purchase
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+});
+
+// Bookings (Advanced reservations)
+export const bookings = pgTable('bookings', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  userId: uuid('user_id').references(() => users.id, { onDelete: 'cascade' }).notNull(),
+  deviceId: uuid('device_id').references(() => devices.id, { onDelete: 'cascade' }).notNull(),
+  providerId: uuid('provider_id').references(() => hardwareProviders.id, { onDelete: 'cascade' }).notNull(),
+  startTime: timestamp('start_time').notNull(),
+  endTime: timestamp('end_time').notNull(),
+  durationHours: integer('duration_hours').notNull(),
+  hourlyRate: decimal('hourly_rate', { precision: 10, scale: 2 }).notNull(),
+  totalCost: decimal('total_cost', { precision: 10, scale: 2 }).notNull(),
+  status: varchar('status', { length: 50 }).default('pending'), // 'pending', 'confirmed', 'in_progress', 'completed', 'cancelled'
+  notes: text('notes'),
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+});
+
+// Provider Earnings
+export const providerEarnings = pgTable('provider_earnings', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  providerId: uuid('provider_id').references(() => hardwareProviders.id, { onDelete: 'cascade' }).notNull(),
+  sessionId: uuid('session_id').references(() => deviceSessions.id, { onDelete: 'set null' }),
+  bookingId: uuid('booking_id').references(() => bookings.id, { onDelete: 'set null' }),
+  deviceId: uuid('device_id').references(() => devices.id, { onDelete: 'set null' }),
+  grossAmount: decimal('gross_amount', { precision: 10, scale: 2 }).notNull(),
+  platformFee: decimal('platform_fee', { precision: 10, scale: 2 }).notNull(),
+  netAmount: decimal('net_amount', { precision: 10, scale: 2 }).notNull(),
+  status: varchar('status', { length: 50 }).default('pending'), // 'pending', 'processing', 'paid'
+  paidAt: timestamp('paid_at'),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
 // Relations
-export const usersRelations = relations(users, ({ many }) => ({
+export const usersRelations = relations(users, ({ one, many }) => ({
   projects: many(projects),
   apiKeys: many(apiKeys),
   aiProviderKeys: many(aiProviderKeys),
@@ -149,6 +232,28 @@ export const usersRelations = relations(users, ({ many }) => ({
   aiExecutions: many(aiExecutions),
   usageMetrics: many(usageMetrics),
   invoices: many(invoices),
+  hardwareProvider: one(hardwareProviders),
+  favorites: many(favorites),
+  ratings: many(ratings),
+  bookings: many(bookings),
+}));
+
+export const hardwareProvidersRelations = relations(hardwareProviders, ({ one, many }) => ({
+  user: one(users, {
+    fields: [hardwareProviders.userId],
+    references: [users.id],
+  }),
+  devices: many(devices),
+  ratings: many(ratings),
+  bookings: many(bookings),
+  earnings: many(providerEarnings),
+}));
+
+export const devicesRelations = relations(devices, ({ one }) => ({
+  provider: one(hardwareProviders, {
+    fields: [devices.providerId],
+    references: [hardwareProviders.id],
+  }),
 }));
 
 export const projectsRelations = relations(projects, ({ one, many }) => ({
