@@ -1,0 +1,23 @@
+{
+  "name": "HitForget Virtual Processors",
+  "short_name": "HitForget",
+  "description": "Virtual embedded processors in the cloud. Arduino, STM32, Raspberry Pi, ESP32 without physical hardware.",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#2563EB",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}
