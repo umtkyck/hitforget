@@ -1,22 +1,80 @@
+'use client';
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Cpu, Zap, Shield, Code } from "lucide-react";
+import { HeroScene } from "@/components/3d/Scene";
+import { LogoFull } from "@/components/logo";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register GSAP plugins
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function Home() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Hero animations
+    const ctx = gsap.context(() => {
+      // Fade in hero content
+      gsap.from(titleRef.current, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.5,
+        ease: "power3.out",
+      });
+
+      gsap.from(subtitleRef.current, {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        delay: 0.8,
+        ease: "power3.out",
+      });
+
+      gsap.from(ctaRef.current, {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        delay: 1.1,
+        ease: "power3.out",
+      });
+
+      // Parallax effect on scroll
+      gsap.to(heroRef.current, {
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+        y: 200,
+        ease: "none",
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Header */}
-      <header className="border-b">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <Cpu className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold">HitForget</span>
-          </div>
+          <LogoFull size="sm" />
           <nav className="hidden md:flex space-x-6">
-            <Link href="#features" className="text-sm hover:text-primary">Features</Link>
-            <Link href="#pricing" className="text-sm hover:text-primary">Pricing</Link>
-            <Link href="#docs" className="text-sm hover:text-primary">Docs</Link>
+            <Link href="#features" className="text-sm hover:text-primary transition-colors">Features</Link>
+            <Link href="#pricing" className="text-sm hover:text-primary transition-colors">Pricing</Link>
+            <Link href="#docs" className="text-sm hover:text-primary transition-colors">Docs</Link>
           </nav>
           <div className="flex space-x-4">
             <Button variant="ghost" asChild>
@@ -29,26 +87,45 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+      {/* Hero Section with 3D Scene */}
+      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* 3D Background */}
+        <HeroScene />
+
+        {/* Hero Content */}
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <h1
+            ref={titleRef}
+            className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-2xl"
+          >
             Hardware-as-a-Service
-            <span className="block text-primary mt-2">+ AI Development Platform</span>
+            <span className="block text-blue-400 mt-2 drop-shadow-[0_0_30px_rgba(59,130,246,0.5)]">
+              + AI Development Platform
+            </span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p
+            ref={subtitleRef}
+            className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto drop-shadow-lg"
+          >
             Remote access to real hardware. AI-powered development.
             Test and debug embedded devices from anywhere in the world.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
+          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="text-lg px-8 py-6 shadow-2xl hover:shadow-blue-500/50 transition-all" asChild>
               <Link href="/dashboard">
-                Start Building <ArrowRight className="ml-2 h-4 w-4" />
+                Start Building <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 shadow-2xl" asChild>
               <Link href="#demo">Watch Demo</Link>
             </Button>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
+            <div className="w-1.5 h-3 bg-white/50 rounded-full"></div>
           </div>
         </div>
       </section>
