@@ -1,4 +1,4 @@
-# Vercel Deployment Guide - HitForget Virtual Processors
+# Vercel Deployment Guide - Visucan Virtual Processors
 ## Production-Ready Deployment in 10 Minutes
 
 ---
@@ -9,7 +9,7 @@
 
 1. Go to **[vercel.com](https://vercel.com)**
 2. Click **"New Project"**
-3. Import from **GitHub**: `umtkyck/hitforget`
+3. Import from **GitHub**: `umtkyck/visucan`
 4. Select branch: `claude/hardware-ai-platform-design-011CUuJySaaAtYdHyoUr9iTg` (or `main`)
 5. Click **"Import"**
 
@@ -312,13 +312,13 @@ npm run type-check
 
 ### Add Domain
 1. Vercel Project → **"Domains"** tab
-2. Enter your domain: `hitforget.com`
+2. Enter your domain: `visucan.com`
 3. Follow DNS setup instructions
 
 ### DNS Configuration
 Add these records to your DNS provider:
 
-**For root domain** (hitforget.com):
+**For root domain** (visucan.com):
 ```
 Type: A
 Name: @
@@ -335,7 +335,7 @@ Value: cname.vercel-dns.com
 ### Update Environment Variables
 After domain is active:
 ```
-NEXTAUTH_URL=https://hitforget.com
+NEXTAUTH_URL=https://visucan.com
 ```
 
 Redeploy or update in Vercel dashboard.
@@ -466,8 +466,8 @@ https://your-app.vercel.app
 - [Environment Variables](https://vercel.com/docs/concepts/projects/environment-variables)
 - [Custom Domains](https://vercel.com/docs/concepts/projects/domains)
 
-### HitForget Support
-- GitHub Issues: [github.com/umtkyck/hitforget/issues](https://github.com/umtkyck/hitforget/issues)
-- Email: support@hitforget.com
+### Visucan Support
+- GitHub Issues: [github.com/umtkyck/visucan/issues](https://github.com/umtkyck/visucan/issues)
+- Email: support@visucan.com
 
 **Happy Deploying! 🚀**

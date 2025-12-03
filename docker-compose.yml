@@ -4,17 +4,17 @@ services:
   # PostgreSQL Database
   postgres:
     image: postgres:16-alpine
-    container_name: hitforget-postgres
+    container_name: visucan-postgres
     environment:
-      POSTGRES_DB: hitforget
-      POSTGRES_USER: hitforget
-      POSTGRES_PASSWORD: hitforget_dev_password
+      POSTGRES_DB: visucan
+      POSTGRES_USER: visucan
+      POSTGRES_PASSWORD: visucan_dev_password
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U hitforget"]
+      test: ["CMD-SHELL", "pg_isready -U visucan"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -22,7 +22,7 @@ services:
   # Redis (Vercel KV alternative for local dev)
   redis:
     image: redis:7-alpine
-    container_name: hitforget-redis
+    container_name: visucan-redis
     ports:
       - "6379:6379"
     volumes:
@@ -39,12 +39,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: hitforget-frontend
+    container_name: visucan-frontend
     ports:
       - "3000:3000"
     environment:
       - NODE_ENV=development
-      - POSTGRES_URL=postgres://hitforget:hitforget_dev_password@postgres:5432/hitforget
+      - POSTGRES_URL=postgres://visucan:visucan_dev_password@postgres:5432/visucan
       - KV_URL=redis://redis:6379
       - NEXTAUTH_URL=http://localhost:3000
       - NEXTAUTH_SECRET=dev-secret-change-in-production
@@ -62,12 +62,12 @@ services:
     build:
       context: .
       dockerfile: device-backend/Dockerfile
-    container_name: hitforget-device-backend
+    container_name: visucan-device-backend
     ports:
       - "3001:3001"
     environment:
       - NODE_ENV=development
-      - POSTGRES_URL=postgres://hitforget:hitforget_dev_password@postgres:5432/hitforget
+      - POSTGRES_URL=postgres://visucan:visucan_dev_password@postgres:5432/visucan
       - REDIS_URL=redis://redis:6379
     depends_on:
       - postgres

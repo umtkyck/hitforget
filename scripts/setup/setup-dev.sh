@@ -3,7 +3,7 @@
 
 set -e
 
-echo "🔧 Setting up HitForget development environment..."
+echo "🔧 Setting up Visucan development environment..."
 
 # Check if Docker is installed
 if ! command -v docker &> /dev/null; then

@@ -1,5 +1,5 @@
 /**
- * HitForget Virtual Processor Demo
+ * Visucan Virtual Processor Demo
  * Arduino Uno - Interactive LED Control
  *
  * This advanced demo shows interactive virtual hardware:

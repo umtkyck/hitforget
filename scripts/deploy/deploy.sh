@@ -1,9 +1,9 @@
 #!/bin/bash
-# HitForget Deployment Script
+# Visucan Deployment Script
 
 set -e
 
-echo "🚀 Starting HitForget deployment..."
+echo "🚀 Starting Visucan deployment..."
 
 # Check if required environment variables are set
 if [ -z "$VERCEL_TOKEN" ]; then

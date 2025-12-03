@@ -12,7 +12,7 @@ export default function DashboardPage() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Cpu className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold">HitForget</span>
+            <span className="text-xl font-bold">Visucan</span>
           </div>
           <nav className="flex space-x-4">
             <Link href="/dashboard" className="text-sm font-medium">Dashboard</Link>

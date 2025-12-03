@@ -14,7 +14,7 @@ class VirtualProcessorService {
   constructor() {
     this.instances = new Map(); // instanceId -> { process, type, config, sockets }
     this.simulations = new Map(); // simulationId -> { instanceId, firmware, output }
-    this.baseDir = '/tmp/hitforget-virtual';
+    this.baseDir = '/tmp/visucan-virtual';
   }
 
   async initialize() {

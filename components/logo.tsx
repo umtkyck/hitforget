@@ -69,8 +69,8 @@ export function Logo({
   // Text logo
   const TextLogo = () => (
     <span className={`font-bold ${textSizeClasses[size]} ${className}`}>
-      <span className="text-primary">Hit</span>
-      <span className="text-foreground">Forget</span>
+      <span className="text-primary">Visu</span>
+      <span className="text-foreground">can</span>
     </span>
   );
 

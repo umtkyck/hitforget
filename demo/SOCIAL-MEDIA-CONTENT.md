@@ -1,4 +1,4 @@
-# Social Media Content - HitForget Virtual Processors
+# Social Media Content - Visucan Virtual Processors
 ## Arduino Uno Demo Campaign
 
 ---
@@ -36,7 +36,7 @@ Toplam: $40+ ve zaman kaybı 😓
 
 **Tweet 3/5** (Solution)
 ```
-HitForget Virtual Processors ile:
+Visucan Virtual Processors ile:
 ✅ $0 donanım maliyeti
 ✅ 0 dakika kurulum
 ✅ Hiçbir zarar görme riski
@@ -62,7 +62,7 @@ Sadece fiziksel kart yok! 🔥
 **Tweet 5/5** (Call to Action)
 ```
 🎁 Şimdi ücretsiz deneyin:
-👉 hitforget.com/virtual-processors
+👉 visucan.com/virtual-processors
 
 Desteklenen platformlar:
 • Arduino Uno/Nano/Mega
@@ -127,7 +127,7 @@ BULUTTA ÇALIŞTIRIN! 🚀
 ### Post #4: Use Case
 
 ```
-🎯 HitForget Virtual Processors kime göre?
+🎯 Visucan Virtual Processors kime göre?
 
 👨‍🎓 Öğrenciler: Kart almadan öğren
 👨‍💻 Developers: Prototip hızlı test et
@@ -155,7 +155,7 @@ Geleneksel embedded geliştirmenin sorunları:
 • Fiziksel ekipman kısıtlamaları
 • Uzaktan çalışma zorlukları
 
-HitForget Virtual Processors ile ekibimiz:
+Visucan Virtual Processors ile ekibimiz:
 ✅ Donanım maliyetlerinden %90 tasarruf etti
 ✅ Onboarding süresini 2 saatten 5 dakikaya düşürdü
 ✅ Dünya çapında distributed development yapıyor
@@ -171,7 +171,7 @@ Platform özellikleri:
 Embedded development hiç bu kadar erişilebilir olmamıştı.
 
 Demo videomuz: [link]
-Free trial: hitforget.com/virtual-processors
+Free trial: visucan.com/virtual-processors
 
 #EmbeddedSystems #CloudComputing #DeveloperTools #Innovation #IoT
 
@@ -187,7 +187,7 @@ Thoughts? Ekibinizde virtual processor ihtiyacı var mı?
 ```
 ⚙️ Behind the Scenes: Virtual Processor Architecture
 
-HitForget'te Arduino, STM32 ve RPi'ı bulutta nasıl çalıştırıyoruz?
+Visucan'te Arduino, STM32 ve RPi'ı bulutta nasıl çalıştırıyoruz?
 
 🔧 Simulator Stack:
 • SimAVR → Arduino/AVR processors
@@ -237,7 +237,7 @@ Traditional approach maliyeti:
 
 Toplam: $5,250 + recurring costs
 
-HitForget Virtual Processors ile:
+Visucan Virtual Processors ile:
 • 50 student accounts: $500/month ($6,000/year)
 • Zero hardware cost
 • Zero maintenance
@@ -292,9 +292,9 @@ Geleneksel Yöntem:
 
 **Slide 3: Solution**
 ```
-[Image: HitForget virtual processor screen]
+[Image: Visucan virtual processor screen]
 
-HitForget ile:
+Visucan ile:
 ✅ $0 donanım
 ✅ 0 dk kurulum
 ✅ Her yerden erişim
@@ -321,7 +321,7 @@ Sanal donanım!
 ÜCRETSİZ DENEYİN! 🎁
 
 Link in bio 👆
-hitforget.com
+visucan.com
 
 #arduino #coding #tech
 ```
@@ -352,7 +352,7 @@ Tag your maker friends!
 
 **Image:** Split screen
 - Left: Messy desk with wires, boards, breadboard
-- Right: Clean laptop showing HitForget interface
+- Right: Clean laptop showing Visucan interface
 
 **Text Overlay:**
 ```
@@ -366,7 +366,7 @@ AFTER 😍
 • Clean workspace
 • Code anywhere
 
-hitforget.com 🚀
+visucan.com 🚀
 ```
 
 **Caption:**
@@ -461,12 +461,12 @@ Who needs this?? 👇"
 ### Title Options:
 1. "Arduino Without Arduino? Cloud-Based Embedded Development Tutorial"
 2. "Save $200+ on Arduino Hardware - Virtual Processor Platform"
-3. "AI + Arduino in the Cloud - HitForget Platform Demo"
+3. "AI + Arduino in the Cloud - Visucan Platform Demo"
 4. "How to Code Arduino Without Buying a Board (2025)"
 
 ### Description:
 ```
-🚀 HitForget Virtual Processors ile Arduino, STM32, ve Raspberry Pi geliştirmesi yapın - fiziksel donanım gerekmez!
+🚀 Visucan Virtual Processors ile Arduino, STM32, ve Raspberry Pi geliştirmesi yapın - fiziksel donanım gerekmez!
 
 Bu videoda:
 ✅ Virtual Arduino Uno instance oluşturma
@@ -477,7 +477,7 @@ Bu videoda:
 
 💰 Pricing: $9.99/month (Arduino kartından ucuz!)
 
-🔗 Free Trial: https://hitforget.com/virtual-processors
+🔗 Free Trial: https://visucan.com/virtual-processors
 
 📚 Chapters:
 0:00 Intro
@@ -505,12 +505,12 @@ Bu videoda:
 
 ---
 
-🌐 HitForget Platform:
-Website: https://hitforget.com
-Twitter: @hitforget
+🌐 Visucan Platform:
+Website: https://visucan.com
+Twitter: @visucan
 Discord: [link]
 
-📧 Contact: hello@hitforget.com
+📧 Contact: hello@visucan.com
 
 Sponsored? No. Genuinely impressed? Yes! 🔥
 ```
@@ -529,7 +529,7 @@ Sponsored? No. Genuinely impressed? Yes! 🔥
    - Your face (optional, increases CTR)
 
 2. **Social Media Square (1:1):**
-   - HitForget logo
+   - Visucan logo
    - Virtual processor interface screenshot
    - "Try Free" button graphic
    - Vibrant gradient background
@@ -572,7 +572,7 @@ Sponsored? No. Genuinely impressed? Yes! 🔥
 
 ### Primary Hashtags (Always use):
 ```
-#HitForget #VirtualProcessors #CloudDevelopment
+#Visucan #VirtualProcessors #CloudDevelopment
 ```
 
 ### Category Hashtags (Rotate):
@@ -637,7 +637,7 @@ Questions? Happy to answer! 👨‍💻
 
 ## 🎯 Call-to-Action Variations
 
-1. "Try free → hitforget.com/virtual-processors"
+1. "Try free → visucan.com/virtual-processors"
 2. "Start coding today → Link in bio 👆"
 3. "No credit card needed → Get started free 🎁"
 4. "Limited beta access → Join waitlist 🚀"

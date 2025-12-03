@@ -1,4 +1,4 @@
-# Visual Assets Guide - HitForget Virtual Processors Demo
+# Visual Assets Guide - Visucan Virtual Processors Demo
 ## Screenshots, Videos, and Design Templates
 
 ---
@@ -8,7 +8,7 @@
 ### Required Screenshots (10 total)
 
 #### 1. **Homepage Hero**
-- **URL**: `https://hitforget.com`
+- **URL**: `https://visucan.com`
 - **Elements to show**: Navigation, hero text, CTA button
 - **Resolution**: 1920x1080
 - **Use for**: Website preview, landing page showcase
@@ -177,7 +177,7 @@ Left Side (60%):
 
 Right Side (40%):
 - Your face (optional, increases CTR by 30%)
-- Or HitForget logo
+- Or Visucan logo
 - Excited expression
 
 Text Overlay:
@@ -252,7 +252,7 @@ Text overlay: "It actually works! 🤯"
 ```
 Top: "Try it FREE"
 Middle: QR code (large, scannable)
-Bottom: "hitforget.com/virtual-processors"
+Bottom: "visucan.com/virtual-processors"
 ```
 
 ---
@@ -300,7 +300,7 @@ Create consistent icons for features:
 #### Intro (0:00 - 0:10)
 ```
 - Fade in from black
-- HitForget logo animation (2 seconds)
+- Visucan logo animation (2 seconds)
 - Quick title card: "Virtual Arduino Demo"
 - Upbeat music starts (20% volume)
 ```
@@ -345,7 +345,7 @@ Create consistent icons for features:
 #### Outro (5:00 - 5:15)
 ```
 - Return to talking head or logo
-- CTA: "Try free at hitforget.com"
+- CTA: "Try free at visucan.com"
 - Text overlay: URL + QR code (for YouTube)
 - Subscribe button animation (YouTube)
 - Fade to black
@@ -481,14 +481,14 @@ Create 3 variations, test which performs best:
 
 **Version B: Before/After Split**
 - Left: Messy desk with wires
-- Right: Clean laptop with HitForget
+- Right: Clean laptop with Visucan
 - Text: "BEFORE → AFTER"
 
 **Version C: Bold Text Focus**
 - Solid color background
 - Huge text: "NO HARDWARE NEEDED"
 - Small Arduino icon with X
-- HitForget logo
+- Visucan logo
 
 **Test for 1 week each, track CTR (Click-Through Rate)**
 

@@ -151,7 +151,7 @@ Use: `og-image.svg` (1200x630)
 
 ### Browser
 - [x] Favicon appears in browser tab
-- [x] Title shows "HitForget - Virtual Embedded Processors"
+- [x] Title shows "Visucan - Virtual Embedded Processors"
 - [x] Logo SVG loads correctly
 
 ### Social Sharing

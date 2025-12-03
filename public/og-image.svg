@@ -42,7 +42,7 @@
 
   <!-- Text Content (Right Side) -->
   <text x="550" y="220" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white">
-    HitForget
+    Visucan
   </text>
 
   <text x="550" y="290" font-family="Arial, sans-serif" font-size="48" font-weight="600" fill="white" opacity="0.95">

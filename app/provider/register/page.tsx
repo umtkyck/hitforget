@@ -175,8 +175,8 @@ export default function ProviderRegisterPage() {
 
       <div className="mt-8 text-center text-sm text-muted-foreground">
         <p>Questions? Contact us at{" "}
-          <a href="mailto:providers@hitforget.io" className="text-primary hover:underline">
-            providers@hitforget.io
+          <a href="mailto:providers@visucan.io" className="text-primary hover:underline">
+            providers@visucan.io
           </a>
         </p>
       </div>

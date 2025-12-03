@@ -1,6 +1,6 @@
-# HitForget - Implemented Features
+# Visucan - Implemented Features
 
-This document lists all the features that have been implemented in the HitForget platform.
+This document lists all the features that have been implemented in the Visucan platform.
 
 ## ✅ Core Features Implemented
 
@@ -191,7 +191,7 @@ await gitlab.createCommitStatus(projectId, sha, 'success');
 ## 📁 Project Structure
 
 ```
-hitforget/
+visucan/
 ├── app/
 │   ├── api/
 │   │   ├── auth/[...nextauth]/route.ts     # NextAuth endpoints
@@ -395,8 +395,8 @@ const buildInfo = await buildService.build('build-123', {
 ## 📞 Support
 
 For questions or issues:
-- GitHub Issues: https://github.com/umtkyck/hitforget/issues
-- Email: support@hitforget.io
+- GitHub Issues: https://github.com/umtkyck/visucan/issues
+- Email: support@visucan.io
 - Documentation: See README.md, VISION.md, ARCHITECTURE.md
 
 ---

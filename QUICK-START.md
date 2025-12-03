@@ -1,4 +1,4 @@
-# HitForget Virtual Processors - Quick Start Guide
+# Visucan Virtual Processors - Quick Start Guide
 ## From Zero to Demo in 15 Minutes ⚡
 
 ---
@@ -9,8 +9,8 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/umtkyck/hitforget.git
-cd hitforget
+git clone https://github.com/umtkyck/visucan.git
+cd visucan
 
 # Automated setup (installs deps, checks env, seeds data)
 ./scripts/demo-setup.sh
@@ -73,7 +73,7 @@ Follow **demo/DEMO-SCRIPT.md** for step-by-step recording guide.
 ## 📂 File Structure
 
 ```
-hitforget/
+visucan/
 ├── demo/
 │   ├── README.md                    ⭐ Demo overview
 │   ├── DEMO-SCRIPT.md               🎬 Video recording script
@@ -289,8 +289,8 @@ ls -la app/api/virtual-processors/
 
 - **Documentation**: Read all MD files in `demo/`
 - **Tests**: Run `node scripts/test-demo.js`
-- **GitHub Issues**: https://github.com/umtkyck/hitforget/issues
-- **Email**: support@hitforget.com
+- **GitHub Issues**: https://github.com/umtkyck/visucan/issues
+- **Email**: support@visucan.com
 
 ---
 

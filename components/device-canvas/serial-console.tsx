@@ -59,7 +59,7 @@ export function SerialConsole({ deviceId }: SerialConsoleProps) {
     fitAddon.fit();
     fitAddonRef.current = fitAddon;
 
-    term.writeln("Welcome to HitForget Serial Console");
+    term.writeln("Welcome to Visucan Serial Console");
     term.writeln("Connecting to device...");
 
     setTerminal(term);

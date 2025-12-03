@@ -2,7 +2,7 @@
 
 ## 🎯 Overview
 
-HitForget now supports **Virtual Embedded Processors** - cloud-based simulation of Arduino, STM32, Raspberry Pi, and FPGA platforms. No physical hardware required!
+Visucan now supports **Virtual Embedded Processors** - cloud-based simulation of Arduino, STM32, Raspberry Pi, and FPGA platforms. No physical hardware required!
 
 This feature enables AI-powered development by allowing you to:
 - Develop embedded applications without buying hardware
@@ -658,6 +658,6 @@ POST /api/virtual-instances/:id/simulations
 - `/virtual-instances/:id` - Configure pins and firmware
 - `/virtual-instances/:id/console` - Real-time serial console
 
-**Deploy URL**: https://hitforget.vercel.app/virtual-processors
+**Deploy URL**: https://visucan.vercel.app/virtual-processors
 
 🚀 **Start simulating today!**

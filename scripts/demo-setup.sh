@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# HitForget Virtual Processors - Demo Quick Start
+# Visucan Virtual Processors - Demo Quick Start
 # Bu script tüm demo ortamını otomatik olarak hazırlar
 
 set -e
 
 echo "════════════════════════════════════════════════════════════"
-echo "  🚀 HitForget Virtual Processors - Demo Setup"
+echo "  🚀 Visucan Virtual Processors - Demo Setup"
 echo "════════════════════════════════════════════════════════════"
 echo ""
 

@@ -133,7 +133,7 @@ export default function Home() {
       {/* Features Section */}
       <section id="features" className="py-20 px-4 bg-muted/50">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose HitForget?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Visucan?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card>
               <CardHeader>
@@ -219,7 +219,7 @@ export default function Home() {
         <div className="container mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Start Building?</h2>
           <p className="text-xl mb-8 opacity-90">
-            Join thousands of developers using HitForget for embedded development.
+            Join thousands of developers using Visucan for embedded development.
           </p>
           <Button size="lg" variant="secondary" asChild>
             <Link href="/dashboard">
@@ -236,7 +236,7 @@ export default function Home() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <Cpu className="h-5 w-5 text-primary" />
-                <span className="font-bold">HitForget</span>
+                <span className="font-bold">Visucan</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 Hardware-as-a-Service platform for embedded developers.
@@ -268,7 +268,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-            © 2025 HitForget. All rights reserved.
+            © 2025 Visucan. All rights reserved.
           </div>
         </div>
       </footer>

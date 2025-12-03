@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * HitForget Virtual Processors - Demo Test Script
+ * Visucan Virtual Processors - Demo Test Script
  * Bu script demo'nun tüm özelliklerinin çalıştığını doğrular
  */
 
@@ -42,7 +42,7 @@ function test(name, condition) {
 }
 
 console.log('\n════════════════════════════════════════════════════════════');
-console.log('  🧪 HitForget Virtual Processors - Demo Test Suite');
+console.log('  🧪 Visucan Virtual Processors - Demo Test Suite');
 console.log('════════════════════════════════════════════════════════════\n');
 
 // Test 1: Project Structure

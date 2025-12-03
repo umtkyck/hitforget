@@ -1,5 +1,5 @@
 /**
- * HitForget Virtual Processor Demo
+ * Visucan Virtual Processor Demo
  * Arduino Uno - LED Blink Application
  *
  * This sketch demonstrates basic Arduino functionality in a virtual environment.
@@ -32,7 +32,7 @@ void setup() {
 
   // Print startup banner
   Serial.println("╔════════════════════════════════════════╗");
-  Serial.println("║   HitForget Virtual Arduino Uno R3     ║");
+  Serial.println("║   Visucan Virtual Arduino Uno R3     ║");
   Serial.println("║   LED Blink Demo Application           ║");
   Serial.println("╚════════════════════════════════════════╝");
   Serial.println();

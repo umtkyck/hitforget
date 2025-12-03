@@ -1,6 +1,6 @@
-# Contributing to HitForget
+# Contributing to Visucan
 
-Thank you for your interest in contributing to HitForget! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to Visucan! This document provides guidelines and instructions for contributing.
 
 ## Code of Conduct
 
@@ -10,7 +10,7 @@ We are committed to providing a welcoming and inclusive experience for everyone.
 
 ### Reporting Bugs
 
-1. Check if the bug has already been reported in [Issues](https://github.com/umtkyck/hitforget/issues)
+1. Check if the bug has already been reported in [Issues](https://github.com/umtkyck/visucan/issues)
 2. If not, create a new issue with:
    - Clear title and description
    - Steps to reproduce
@@ -45,8 +45,8 @@ See [README.md](README.md) for detailed setup instructions.
 Quick start:
 ```bash
 # Clone the repo
-git clone https://github.com/umtkyck/hitforget.git
-cd hitforget
+git clone https://github.com/umtkyck/visucan.git
+cd visucan
 
 # Install dependencies
 npm install
@@ -90,7 +90,7 @@ feat: add serial console component (#123)
 ## Project Structure
 
 ```
-hitforget/
+visucan/
 ├── app/              # Next.js app (routes, pages)
 ├── components/       # React components
 ├── lib/             # Utilities, database, helpers
@@ -105,6 +105,6 @@ hitforget/
 Feel free to ask questions by:
 - Opening an issue
 - Joining our Discord
-- Emailing support@hitforget.io
+- Emailing support@visucan.io
 
 Thank you for contributing! 🎉

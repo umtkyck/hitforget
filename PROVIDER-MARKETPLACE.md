@@ -2,7 +2,7 @@
 
 ## 🎯 Genel Bakış
 
-HitForget artık **freelancer benzeri bir donanım marketplace**! Kullanıcılar kendi eval board'larını platforma ekleyip başkalarına kiralayabilir ve gelir elde edebilir.
+Visucan artık **freelancer benzeri bir donanım marketplace**! Kullanıcılar kendi eval board'larını platforma ekleyip başkalarına kiralayabilir ve gelir elde edebilir.
 
 ## 💡 Konsept
 
@@ -11,7 +11,7 @@ HitForget artık **freelancer benzeri bir donanım marketplace**! Kullanıcılar
 **Scenario 1: TechLab Istanbul**
 ```
 Elimde 15 adet farklı eval board var (Raspberry Pi, STM32, FPGA)
-→ HitForget'e provider olarak kaydoldum
+→ Visucan'e provider olarak kaydoldum
 → Cihazlarımı ekledim, saat başı $1-5 fiyat belirledim
 → Network'e takıp 24/7 erişilebilir yaptım
 → Her ay ~$1200 pasif gelir elde ediyorum
@@ -493,7 +493,7 @@ interface ProviderStats {
 
 ## 🎯 Özetçe
 
-**Artık HitForget bir marketplace!**
+**Artık Visucan bir marketplace!**
 
 ✅ Kendi donanımını paylaş
 ✅ Pasif gelir elde et
@@ -507,6 +507,6 @@ interface ProviderStats {
 - `/provider/register` - Provider ol
 - `/provider/dashboard` - Cihazlarını yönet, gelirini gör
 
-**URL**: https://hitforget.vercel.app/marketplace
+**URL**: https://visucan.vercel.app/marketplace
 
 🚀 **Deploy edilmeye hazır!**

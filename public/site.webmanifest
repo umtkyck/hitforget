@@ -1,6 +1,6 @@
 {
-  "name": "HitForget Virtual Processors",
-  "short_name": "HitForget",
+  "name": "Visucan Virtual Processors",
+  "short_name": "Visucan",
   "description": "Virtual embedded processors in the cloud. Arduino, STM32, Raspberry Pi, ESP32 without physical hardware.",
   "icons": [
     {

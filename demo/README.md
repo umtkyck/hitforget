@@ -1,7 +1,7 @@
-# HitForget Virtual Processors - Demo Materials
+# Visucan Virtual Processors - Demo Materials
 ## Arduino Uno LED Blink Campaign
 
-Bu klasör, HitForget Virtual Processors platformunun Arduino Uno demo'su için tüm gerekli materyalleri içerir.
+Bu klasör, Visucan Virtual Processors platformunun Arduino Uno demo'su için tüm gerekli materyalleri içerir.
 
 ---
 
@@ -88,7 +88,7 @@ node scripts/seed-virtual-processors.js
 #### 1. Database Setup
 ```bash
 # Seed data ekle
-cd /path/to/hitforget
+cd /path/to/visucan
 node scripts/seed-virtual-processors.js
 
 # ✅ Output:
@@ -268,9 +268,9 @@ npm start
 ## 📞 Yardım ve Destek
 
 ### Sorular?
-- 📧 Email: demo@hitforget.com
-- 💬 Discord: [HitForget Community]
-- 🐦 Twitter: @hitforget
+- 📧 Email: demo@visucan.com
+- 💬 Discord: [Visucan Community]
+- 🐦 Twitter: @visucan
 
 ### Resources
 - [OBS Studio Tutorial](https://obsproject.com/wiki/)

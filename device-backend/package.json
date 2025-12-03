@@ -1,7 +1,7 @@
 {
-  "name": "hitforget-device-backend",
+  "name": "visucan-device-backend",
   "version": "0.1.0",
-  "description": "Device management backend for HitForget",
+  "description": "Device management backend for Visucan",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

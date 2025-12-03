@@ -256,7 +256,7 @@ The 3D landing page follows these principles:
 
 - **Performance First**: GPU-accelerated, optimized rendering
 - **Progressive Enhancement**: Works without JS, enhanced with 3D
-- **Brand Consistency**: Blue theme matches HitForget branding
+- **Brand Consistency**: Blue theme matches Visucan branding
 - **Accessibility**: Reduced motion support (future enhancement)
 - **Mobile-Friendly**: Responsive design with performance scaling
 

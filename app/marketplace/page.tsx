@@ -149,7 +149,7 @@ export default function MarketplacePage() {
         <CardHeader>
           <CardTitle className="text-2xl">Share Your Hardware, Earn Money</CardTitle>
           <CardDescription className="text-primary-foreground/80">
-            Have eval boards sitting idle? Put them to work on the HitForget marketplace.
+            Have eval boards sitting idle? Put them to work on the Visucan marketplace.
           </CardDescription>
         </CardHeader>
         <CardContent>

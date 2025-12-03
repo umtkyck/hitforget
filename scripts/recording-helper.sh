@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# HitForget Virtual Processors - Video Recording Helper
+# Visucan Virtual Processors - Video Recording Helper
 # Bu script video kaydı için tarayıcıyı ve ortamı hazırlar
 
 set -e
@@ -18,7 +18,7 @@ clear
 echo ""
 echo -e "${CYAN}╔════════════════════════════════════════════════════════╗${NC}"
 echo -e "${CYAN}║                                                        ║${NC}"
-echo -e "${CYAN}║   📹 HitForget Virtual Processors                      ║${NC}"
+echo -e "${CYAN}║   📹 Visucan Virtual Processors                      ║${NC}"
 echo -e "${CYAN}║      Video Recording Helper                            ║${NC}"
 echo -e "${CYAN}║                                                        ║${NC}"
 echo -e "${CYAN}╚════════════════════════════════════════════════════════╝${NC}"

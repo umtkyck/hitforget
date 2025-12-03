@@ -1,11 +1,11 @@
-# HitForget - Hardware-as-a-Service + AI Test/Dev Platform
+# Visucan - Hardware-as-a-Service + AI Test/Dev Platform
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-MVP-yellow.svg)]()
 
 ## Overview
 
-HitForget is a cloud-based Hardware-as-a-Service platform that enables embedded software developers, hardware teams, startups, and universities to remotely access, program, test, and debug physical hardware devices integrated with AI-powered development tools.
+Visucan is a cloud-based Hardware-as-a-Service platform that enables embedded software developers, hardware teams, startups, and universities to remotely access, program, test, and debug physical hardware devices integrated with AI-powered development tools.
 
 ## Key Features
 
@@ -47,8 +47,8 @@ HitForget is a cloud-based Hardware-as-a-Service platform that enables embedded 
 
 ```bash
 # Clone the repository
-git clone https://github.com/umtkyck/hitforget.git
-cd hitforget
+git clone https://github.com/umtkyck/visucan.git
+cd visucan
 
 # Install dependencies
 npm install
@@ -89,7 +89,7 @@ open http://localhost:3000
 ## Project Structure
 
 ```
-hitforget/
+visucan/
 ├── backend/                 # Backend services
 │   ├── api/                # REST/gRPC API endpoints
 │   ├── device-manager/     # Device allocation, health checks
@@ -204,7 +204,7 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for deta
 
 ## Security
 
-For security concerns, please email security@hitforget.io. See [SECURITY.md](SECURITY.md) for our security policy.
+For security concerns, please email security@visucan.io. See [SECURITY.md](SECURITY.md) for our security policy.
 
 ## License
 
@@ -212,10 +212,10 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ## Support
 
-- 📧 Email: support@hitforget.io
-- 💬 Discord: [Join our community](https://discord.gg/hitforget)
-- 📖 Docs: [docs.hitforget.io](https://docs.hitforget.io)
-- 🐛 Issues: [GitHub Issues](https://github.com/umtkyck/hitforget/issues)
+- 📧 Email: support@visucan.io
+- 💬 Discord: [Join our community](https://discord.gg/visucan)
+- 📖 Docs: [docs.visucan.io](https://docs.visucan.io)
+- 🐛 Issues: [GitHub Issues](https://github.com/umtkyck/visucan/issues)
 
 ## Acknowledgments
 
@@ -225,4 +225,4 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) file for
 
 ---
 
-Made with ❤️ by the HitForget Team
+Made with ❤️ by the Visucan Team

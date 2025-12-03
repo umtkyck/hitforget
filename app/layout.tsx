@@ -5,8 +5,8 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: {
-    default: "HitForget - Virtual Embedded Processors",
-    template: "%s | HitForget"
+    default: "Visucan - Virtual Embedded Processors",
+    template: "%s | Visucan"
   },
   description: "Virtual Arduino, STM32, Raspberry Pi, and ESP32 processors in the cloud. No physical hardware required. Code, test, and deploy embedded applications with AI integration.",
   keywords: [
@@ -21,15 +21,15 @@ export const metadata: Metadata = {
     "AI embedded",
     "remote hardware"
   ],
-  authors: [{ name: "HitForget Team" }],
-  creator: "HitForget",
-  publisher: "HitForget",
+  authors: [{ name: "Visucan Team" }],
+  creator: "Visucan",
+  publisher: "Visucan",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://hitforget.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://visucan.vercel.app'),
   alternates: {
     canonical: '/',
   },
@@ -37,24 +37,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: '/',
-    title: 'HitForget - Virtual Embedded Processors',
+    title: 'Visucan - Virtual Embedded Processors',
     description: 'Virtual Arduino, STM32, Raspberry Pi, ESP32 in the cloud. No hardware needed. Code, test, deploy with AI.',
-    siteName: 'HitForget',
+    siteName: 'Visucan',
     images: [
       {
         url: '/og-image.svg',
         width: 1200,
         height: 630,
-        alt: 'HitForget - Virtual Processors Platform',
+        alt: 'Visucan - Virtual Processors Platform',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HitForget - Virtual Embedded Processors',
+    title: 'Visucan - Virtual Embedded Processors',
     description: 'Arduino, STM32, Raspberry Pi in the cloud. No hardware required!',
     images: ['/og-image.svg'],
-    creator: '@hitforget',
+    creator: '@visucan',
   },
   icons: {
     icon: [

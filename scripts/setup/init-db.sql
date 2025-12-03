@@ -1,11 +1,11 @@
--- Initialize HitForget Database
+-- Initialize Visucan Database
 -- This script creates the initial database structure
 
 -- Create database (if not exists)
-CREATE DATABASE IF NOT EXISTS hitforget;
+CREATE DATABASE IF NOT EXISTS visucan;
 
 -- Use the database
-\c hitforget;
+\c visucan;
 
 -- Enable UUID extension
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
@@ -19,7 +19,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 -- Create initial admin user (for development)
 -- Password: admin123 (change in production)
 -- INSERT INTO users (email, name, role) VALUES
---   ('admin@hitforget.io', 'Admin User', 'admin');
+--   ('admin@visucan.io', 'Admin User', 'admin');
 
 -- Create sample devices
 -- INSERT INTO devices (device_type, slot_number, rack_id, status) VALUES
@@ -32,4 +32,4 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 --   ('intel_fpga_de10_lite', 7, 'rack-001', 'available');
 
 -- Grant necessary permissions
-GRANT ALL PRIVILEGES ON DATABASE hitforget TO hitforget;
+GRANT ALL PRIVILEGES ON DATABASE visucan TO visucan;

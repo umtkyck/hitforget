@@ -2,13 +2,13 @@
 
 ## Reporting Security Vulnerabilities
 
-We take security seriously at HitForget. If you discover a security vulnerability, please report it responsibly.
+We take security seriously at Visucan. If you discover a security vulnerability, please report it responsibly.
 
 ### How to Report
 
 **DO NOT** open a public GitHub issue for security vulnerabilities.
 
-Instead, please email: security@hitforget.io
+Instead, please email: security@visucan.io
 
 Include:
 - Description of the vulnerability
@@ -113,7 +113,7 @@ These will be addressed in future releases.
 ## Contact
 
 For security questions or concerns:
-- Email: security@hitforget.io
+- Email: security@visucan.io
 - PGP Key: [Coming Soon]
 
 ---

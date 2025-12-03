@@ -1,8 +1,8 @@
-# HitForget Platform Vision
+# Visucan Platform Vision
 
 ## Executive Summary
 
-HitForget is a revolutionary "Hardware-as-a-Service + AI Test/Dev Platform" that democratizes access to embedded development hardware while leveraging AI to accelerate the development cycle. Our platform enables developers worldwide to remotely access, program, test, and debug physical hardware devices through a secure, cloud-based infrastructure integrated with cutting-edge AI development tools.
+Visucan is a revolutionary "Hardware-as-a-Service + AI Test/Dev Platform" that democratizes access to embedded development hardware while leveraging AI to accelerate the development cycle. Our platform enables developers worldwide to remotely access, program, test, and debug physical hardware devices through a secure, cloud-based infrastructure integrated with cutting-edge AI development tools.
 
 ## Target Personas
 
@@ -809,7 +809,7 @@ greenhouse_monitor/
 #### Templates Applied
 - **License**: MIT / Apache 2.0 / GPL (user choice)
 - **README**: Auto-generated with project description
-- **CI/CD**: GitHub Actions workflow for HitForget integration
+- **CI/CD**: GitHub Actions workflow for Visucan integration
 - **Code Style**: Formatting rules (.clang-format, .editorconfig)
 
 ### AI Code Generation
@@ -1153,7 +1153,7 @@ Customer B's prompt → Separate encrypted storage → AI API (ephemeral)
 
 ### Differentiation Matrix
 
-| Feature | HitForget | Competitor A (Simulator) | Competitor B (Lab Sharing) |
+| Feature | Visucan | Competitor A (Simulator) | Competitor B (Lab Sharing) |
 |---------|-----------|--------------------------|----------------------------|
 | Real Hardware | ✅ Yes | ❌ No (QEMU) | ✅ Yes |
 | AI Integration | ✅ Native | 🟡 Plugin | ❌ No |

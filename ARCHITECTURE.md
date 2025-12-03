@@ -1,4 +1,4 @@
-# HitForget - System Architecture
+# Visucan - System Architecture
 
 ## Technology Stack (Vercel-Optimized)
 
@@ -555,14 +555,14 @@ spec:
       hostNetwork: true  # Access to USB devices
       containers:
       - name: serial-agent
-        image: hitforget/serial-agent:latest
+        image: visucan/serial-agent:latest
         securityContext:
           privileged: true  # USB access
         volumeMounts:
         - name: usb-devices
           mountPath: /dev
       - name: camera-agent
-        image: hitforget/camera-agent:latest
+        image: visucan/camera-agent:latest
         resources:
           limits:
             memory: "512Mi"

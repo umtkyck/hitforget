@@ -43,9 +43,9 @@ class BuildService {
 
     // Select Docker image based on platform
     const imageMap = {
-      platformio: 'hitforget/platformio:latest',
-      arduino: 'hitforget/arduino-cli:latest',
-      stm32cube: 'hitforget/stm32cube:latest',
+      platformio: 'visucan/platformio:latest',
+      arduino: 'visucan/arduino-cli:latest',
+      stm32cube: 'visucan/stm32cube:latest',
     };
 
     const image = imageMap[platform] || imageMap.platformio;

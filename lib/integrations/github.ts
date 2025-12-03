@@ -113,7 +113,7 @@ export class GitHubIntegration {
       state,
       target_url: targetUrl,
       description,
-      context: 'HitForget Hardware Tests',
+      context: 'Visucan Hardware Tests',
     });
     return data;
   }
@@ -252,7 +252,7 @@ export class GitLabIntegration {
           state,
           target_url: targetUrl,
           description,
-          name: 'HitForget Hardware Tests',
+          name: 'Visucan Hardware Tests',
         }),
       }
     );

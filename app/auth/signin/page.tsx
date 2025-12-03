@@ -9,7 +9,7 @@ export default function SignInPage() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 to-background p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl">Welcome to HitForget</CardTitle>
+          <CardTitle className="text-3xl">Welcome to Visucan</CardTitle>
           <CardDescription>
             Sign in to access remote hardware and AI-powered development
           </CardDescription>

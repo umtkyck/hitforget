@@ -1,15 +1,15 @@
-# HitForget Virtual Processor Demo Script
+# Visucan Virtual Processor Demo Script
 ## Arduino Uno LED Control - Live Demo
 
 **Duration**: 3-5 minutes
-**Platform**: HitForget Virtual Processors
+**Platform**: Visucan Virtual Processors
 **Target**: Social Media (Twitter, LinkedIn, Instagram, YouTube)
 
 ---
 
 ## 🎯 Demo Overview
 
-Show how developers can write and run Arduino code **without any physical hardware**, using HitForget's Virtual Processor platform.
+Show how developers can write and run Arduino code **without any physical hardware**, using Visucan's Virtual Processor platform.
 
 ### Key Messages:
 - ✅ No Arduino board needed
@@ -42,10 +42,10 @@ Show how developers can write and run Arduino code **without any physical hardwa
 
 ### **INTRO (0:00 - 0:15)**
 
-**[SCREEN: HitForget Homepage]**
+**[SCREEN: Visucan Homepage]**
 
 **Narration:**
-> "Merhaba! Bugün size fiziksel donanım olmadan Arduino geliştirme yapmanızı sağlayan HitForget platformunu göstereceğim. Hiç Arduino kartınız yoksa bile, şimdi kod yazıp çalıştırabilirsiniz!"
+> "Merhaba! Bugün size fiziksel donanım olmadan Arduino geliştirme yapmanızı sağlayan Visucan platformunu göstereceğim. Hiç Arduino kartınız yoksa bile, şimdi kod yazıp çalıştırabilirsiniz!"
 
 **Actions:**
 - Hover over navigation menu
@@ -226,7 +226,7 @@ Ready to configure
 **Console Output (appears line by line):**
 ```
 ╔════════════════════════════════════════╗
-║   HitForget Virtual Arduino Uno R3     ║
+║   Visucan Virtual Arduino Uno R3     ║
 ║   LED Blink Demo Application           ║
 ╚════════════════════════════════════════╝
 
@@ -334,14 +334,14 @@ Starting blink sequence...
 
 ### **OUTRO (5:00 - 5:15)**
 
-**[SCREEN: HitForget logo / Call to action]**
+**[SCREEN: Visucan logo / Call to action]**
 
 **Narration:**
-> "HitForget ile embedded geliştirme artık çok daha kolay! Link'e tıklayın, ücretsiz deneyin. Arduino, STM32, Raspberry Pi - hepsi bulutta sizi bekliyor!"
+> "Visucan ile embedded geliştirme artık çok daha kolay! Link'e tıklayın, ücretsiz deneyin. Arduino, STM32, Raspberry Pi - hepsi bulutta sizi bekliyor!"
 
 **On-Screen Text:**
 ```
-🌐 hitforget.com/virtual-processors
+🌐 visucan.com/virtual-processors
 
 🎁 Start Free Trial
 💡 Arduino • STM32 • Raspberry Pi • ESP32
@@ -386,7 +386,7 @@ Starting blink sequence...
 - Quick teaser version
 - Focus on: Marketplace → Create Instance → See output
 - Text overlay: "No Arduino? No Problem! 🚀"
-- End with: "Try free → hitforget.com"
+- End with: "Try free → visucan.com"
 
 ### **LinkedIn (1-2 minutes)**
 - Professional tone

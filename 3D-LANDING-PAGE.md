@@ -2,7 +2,7 @@
 
 ## Overview
 
-The HitForget landing page now features a cutting-edge 3D visualization built with **Three.js**, **@react-three/fiber**, **@react-three/drei**, and **GSAP**. The page includes custom WebGL shaders for dithering effects, an animated 3D processor chip model, and a particle field system.
+The Visucan landing page now features a cutting-edge 3D visualization built with **Three.js**, **@react-three/fiber**, **@react-three/drei**, and **GSAP**. The page includes custom WebGL shaders for dithering effects, an animated 3D processor chip model, and a particle field system.
 
 ## Technology Stack
 
@@ -365,4 +365,4 @@ import { Stats } from '@react-three/drei';
 
 ## License
 
-Part of the HitForget platform.
+Part of the Visucan platform.

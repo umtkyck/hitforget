@@ -1,7 +1,7 @@
-# HitForget MVP Implementation Plan
+# Visucan MVP Implementation Plan
 
 ## Overview
-This document outlines the Minimum Viable Product (MVP) for HitForget, focusing on core functionality needed to demonstrate the platform's value proposition.
+This document outlines the Minimum Viable Product (MVP) for Visucan, focusing on core functionality needed to demonstrate the platform's value proposition.
 
 ## MVP Scope (Phase 1)
 
